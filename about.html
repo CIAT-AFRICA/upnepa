@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - UPNEPA Renewable Services</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EC3237',
+                            yellow: '#F3AD31',
+                            green: '#50C878',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white dark:bg-[#121212] text-[#0D0D0D] dark:text-white font-sans antialiased">
+
+    <!-- Header -->
+    <header
+        class="bg-white dark:bg-[#1E1E1E] h-16 md:h-16 px-6 sticky top-0 z-50 border-b border-gray-200 dark:border-[#404040]">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between h-full">
+            <!-- Logo block -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="Logo.jpg" alt="URS Logo" style="max-height: 60px;" class="rounded-lg object-contain">
+                <!-- <span class="text-[#121212] dark:text-white font-semibold text-lg">
+                    UPNEPA Renewable Services
+                </span> -->
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Home</a>
+                <a href="about.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">About
+                    Us</a>
+                <a href="services.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Services</a>
+                <a href="market.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Market
+                    & Future</a>
+                <a href="team.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Our
+                    Team</a>
+            </nav>
+
+            <!-- Desktop Action Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html"
+                    class="px-6 py-3 rounded-2xl bg-[#EC3237] hover:bg-[#D12B2F] text-white font-semibold text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 inline-block">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 text-[#121212] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-2xl"
+                aria-label="Toggle mobile menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden fixed inset-0 bg-white dark:bg-[#1E1E1E] z-50 flex flex-col transition-opacity duration-300">
+            <!-- Mobile Header -->
+            <div class="flex items-center justify-between h-14 px-6 border-b border-gray-200 dark:border-[#404040]">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="Logo.jpg" alt="URS Logo" style="max-height: 60px;" class="rounded-lg object-contain">
+                    <!-- <span class="text-[#121212] dark:text-white font-semibold text-lg">
+                        UPNEPA
+                    </span> -->
+                </a>
+                <button id="close-menu-button"
+                    class="p-2 text-[#121212] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-2xl"
+                    aria-label="Close mobile menu">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="flex-1 px-6 py-6 space-y-4">
+                <a href="index.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Home</span></a>
+                <a href="about.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>About
+                        Us</span></a>
+                <a href="services.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Services</span></a>
+                <a href="market.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Market
+                        & Future</span></a>
+                <a href="team.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Our
+                        Team</span></a>
+            </nav>
+
+            <!-- Mobile Action Buttons -->
+            <div class="px-6 py-6 space-y-3 border-t border-gray-200 dark:border-[#404040]">
+                <a href="contact.html"
+                    class="w-full px-6 py-3 rounded-2xl bg-[#EC3237] hover:bg-[#D12B2F] text-white font-semibold text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 text-center inline-block">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative py-20 md:py-32 px-6 bg-gradient-to-b from-[#F5F4F0] to-[#ECEAE7] dark:from-[#1A1A1A] dark:to-[#0F0F0F] font-inter">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <h1
+                        class="text-4xl md:text-6xl font-bold text-[#0D0D0D] dark:text-white mb-6 leading-tight font-playfair">
+                        About <span class="text-[#EC3237]">UPNEPA</span> Renewable Services
+                    </h1>
+                    <p class="text-lg text-[#555555] dark:text-[#C0C0C0] mb-8 leading-relaxed">
+                        Leading the transformation of Africa's energy landscape through intelligent renewable solutions
+                        and
+                        cutting-edge cloud infrastructure.
+                    </p>
+                </div>
+
+                <div class="animate-on-scroll delay-200">
+                    <img src="https://raw.createusercontent.com/ea4f324c-80db-448f-86a7-0c6abdbce2ae/"
+                        alt="UPNEPA company building" class="w-full h-[400px] object-cover rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-[#0D0D0D] dark:text-white mb-8">
+                        Who We Are
+                    </h2>
+                    <div class="space-y-6 text-[#555555] dark:text-[#C0C0C0] leading-relaxed text-lg">
+                        <p>
+                            UPNEPA Renewable Services Ltd (URS) is a leading provider of smart renewable energy and
+                            cloud
+                            power solutions.
+                        </p>
+                        <p>
+                            We deliver highly efficient, reliable, and eco-friendly systems that help organizations
+                            operate
+                            smarter, cleaner, and more efficiently.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll delay-200">
+                    <img src="https://raw.createusercontent.com/09a035a3-094e-4022-ab16-6bb174db1c5b/"
+                        alt="Team working together" class="w-full h-[400px] object-cover rounded-3xl shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section class="py-16 md:py-24 px-6 bg-[#F6F5F2] dark:bg-[#0F0F0F]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Vision -->
+                <div class="animate-on-scroll bg-white dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-[#EC3237] to-[#F3AD31] rounded-2xl flex items-center justify-center mr-4">
+                            <i data-lucide="eye" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#0D0D0D] dark:text-white">
+                            Our Vision
+                        </h3>
+                    </div>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed text-lg">
+                        To build Africa's most intelligent and sustainable power ecosystem powered by renewable sources
+                        and
+                        advanced technology.
+                    </p>
+                </div>
+
+                <!-- Mission -->
+                <div class="animate-on-scroll delay-100 bg-white dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-[#50C878] to-[#F3AD31] rounded-2xl flex items-center justify-center mr-4">
+                            <i data-lucide="target" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#0D0D0D] dark:text-white">
+                            Our Mission
+                        </h3>
+                    </div>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed text-lg">
+                        To provide innovative power and renewable energy services that ensure operational continuity and
+                        drive sustainable development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="animate-on-scroll text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-[#0D0D0D] dark:text-white mb-6">
+                    Our Values
+                </h2>
+                <p class="text-lg text-[#555555] dark:text-[#C0C0C0] max-w-3xl mx-auto">
+                    The principles that guide our work and shape our commitment to excellence in renewable energy
+                    solutions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div
+                    class="animate-on-scroll bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#EC3237] to-[#F3AD31] rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-3">Innovation</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed">Forward-thinking energy & cloud
+                        solutions</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div
+                    class="animate-on-scroll delay-100 bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#50C878] to-[#F3AD31] rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-3">Integrity</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed">Transparency and trust</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div
+                    class="animate-on-scroll delay-200 bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#EC3237] to-[#50C878] rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-3">Excellence</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed">Quality-driven execution</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div
+                    class="animate-on-scroll delay-300 bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#50C878] to-[#EC3237] rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-3">Sustainability</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed">Zero emission-driven solutions</p>
+                </div>
+
+                <!-- Value 5 -->
+                <div
+                    class="animate-on-scroll delay-400 bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#F3AD31] to-[#EC3237] rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="handshake" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-3">Collaboration</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] leading-relaxed">Long-term partnerships</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise Section -->
+    <section class="py-16 md:py-24 px-6 bg-[#F6F5F2] dark:bg-[#0F0F0F]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll">
+                    <img src="https://raw.createusercontent.com/6bf9527f-db05-4fc9-8487-fd7adc77c4c4/"
+                        alt="AI smart grid technology" class="w-full h-[400px] object-cover rounded-3xl shadow-xl">
+                </div>
+
+                <div class="animate-on-scroll delay-200">
+                    <h2 class="text-3xl md:text-5xl font-bold text-[#0D0D0D] dark:text-white mb-8">
+                        Our Expertise
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Solar & hybrid
+                                systems</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Inverters & storage</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Data center
+                                engineering</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Technical support & OEM
+                                services</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Cloud and managed
+                                services</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">IT outsourcing</span>
+                        </div>
+                        <div class="flex items-center space-x-4 bg-white dark:bg-[#1E1E1E] rounded-2xl p-4 shadow-sm">
+                            <div class="w-3 h-3 bg-[#50C878] rounded-full flex-shrink-0"></div>
+                            <span class="text-[#0D0D0D] dark:text-white font-medium text-lg">Energy monitoring and
+                                analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-6 bg-gradient-to-r from-[#EC3237] to-[#F3AD31] relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="max-w-[1200px] mx-auto relative z-10 text-center">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                    Ready to Transform Your Energy Future?
+                </h2>
+                <p class="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
+                    Partner with us to build sustainable, intelligent power solutions that drive your business forward.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="services.html"
+                        class="px-8 py-4 bg-white text-[#EC3237] font-semibold rounded-2xl hover:bg-gray-100 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#EC3237]">
+                        Explore Our Services
+                    </a>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-[#EC3237] transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#EC3237]">
+                        Contact Us Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-[#F7F7F7] dark:bg-[#1A1A1A] border-t border-[#EDEDED] dark:border-[#404040] py-16 px-6 font-inter">
+        <div class="max-w-[1280px] mx-auto">
+            <!-- Logo and Brand - Centered -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center space-x-3 mb-12">
+                    <img src="Logo.jpg" alt="URS Logo" class="w-8 h-8 rounded-lg object-contain">
+                    <span class="text-[#111111] dark:text-white text-[18px] font-semibold font-inter">
+                        UPNEPA Renewable Services Ltd
+                    </span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav>
+                    <div class="flex flex-wrap items-center justify-center gap-10">
+                        <a href="index.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Home</a>
+                        <a href="about.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">About
+                            Us</a>
+                        <a href="services.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Services</a>
+                        <a href="market.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Market
+                            & Future</a>
+                        <a href="team.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Our
+                            Team</a>
+                        <a href="contact.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Contact</a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Company Info Section -->
+            <div class="text-center mb-12">
+                <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] font-normal max-w-2xl mx-auto leading-relaxed">
+                    Building the future of clean power & intelligent infrastructure across Africa. UPNEPA Renewable
+                    Services Ltd delivers next-generation renewable energy, AI-powered smart grids, and cloud
+                    infrastructure solutions.
+                </p>
+            </div>
+
+            <!-- Bottom row - Copyright and Legal Links -->
+            <div
+                class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 pt-8 border-t border-[#EDEDED] dark:border-[#404040]">
+                <!-- Copyright -->
+                <div class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] font-normal order-2 md:order-1">
+                    © 2024 UPNEPA Renewable Services Ltd. All rights reserved.
+                </div>
+
+                <!-- Legal Links -->
+                <div class="flex items-center order-1 md:order-2">
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Privacy
+                            Policy</a>
+                        <span class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] mx-6">|</span>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Terms
+                            of Service</a>
+                        <span class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] mx-6">|</span>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

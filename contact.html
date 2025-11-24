@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - UPNEPA Renewable Services</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EC3237',
+                            yellow: '#F3AD31',
+                            green: '#50C878',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white dark:bg-[#121212] text-[#0D0D0D] dark:text-white font-sans antialiased">
+
+    <!-- Header -->
+    <header
+        class="bg-white dark:bg-[#1E1E1E] h-16 md:h-16 px-6 sticky top-0 z-50 border-b border-gray-200 dark:border-[#404040]">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between h-full">
+            <!-- Logo block -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="Logo.jpg" alt="URS Logo" style="max-height: 60px;" class="rounded-lg object-contain">
+                <!-- <span class="text-[#121212] dark:text-white font-semibold text-lg">
+                    UPNEPA Renewable Services
+                </span> -->
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Home</a>
+                <a href="about.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">About
+                    Us</a>
+                <a href="services.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Services</a>
+                <a href="market.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Market
+                    & Future</a>
+                <a href="team.html"
+                    class="text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-lg px-2 py-1">Our
+                    Team</a>
+            </nav>
+
+            <!-- Desktop Action Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html"
+                    class="px-6 py-3 rounded-2xl bg-[#EC3237] hover:bg-[#D12B2F] text-white font-semibold text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 inline-block">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 text-[#121212] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-2xl"
+                aria-label="Toggle mobile menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden fixed inset-0 bg-white dark:bg-[#1E1E1E] z-50 flex flex-col transition-opacity duration-300">
+            <!-- Mobile Header -->
+            <div class="flex items-center justify-between h-14 px-6 border-b border-gray-200 dark:border-[#404040]">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="Logo.jpg" alt="URS Logo" style="max-height: 60px;" class="rounded-lg object-contain">
+                    <!-- <span class="text-[#121212] dark:text-white font-semibold text-lg">
+                        UPNEPA
+                    </span> -->
+                </a>
+                <button id="close-menu-button"
+                    class="p-2 text-[#121212] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 rounded-2xl"
+                    aria-label="Close mobile menu">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="flex-1 px-6 py-6 space-y-4">
+                <a href="index.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Home</span></a>
+                <a href="about.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>About
+                        Us</span></a>
+                <a href="services.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Services</span></a>
+                <a href="market.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Market
+                        & Future</span></a>
+                <a href="team.html"
+                    class="flex items-center justify-between py-3 text-[#121212] dark:text-white opacity-90 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] transition-colors duration-150 font-medium text-base border-b border-gray-200 dark:border-[#404040]"><span>Our
+                        Team</span></a>
+            </nav>
+
+            <!-- Mobile Action Buttons -->
+            <div class="px-6 py-6 space-y-3 border-t border-gray-200 dark:border-[#404040]">
+                <a href="contact.html"
+                    class="w-full px-6 py-3 rounded-2xl bg-[#EC3237] hover:bg-[#D12B2F] text-white font-semibold text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 text-center inline-block">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative py-20 md:py-32 px-6 bg-gradient-to-b from-[#F5F4F0] to-[#ECEAE7] dark:from-[#1A1A1A] dark:to-[#0F0F0F] font-inter">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <h1
+                class="animate-on-scroll text-4xl md:text-6xl font-bold text-[#0D0D0D] dark:text-white mb-6 leading-tight font-playfair">
+                Let's Build the <span class="text-[#EC3237]">Future</span> Together
+            </h1>
+            <p
+                class="animate-on-scroll delay-200 text-lg text-[#555555] dark:text-[#C0C0C0] mb-12 max-w-4xl mx-auto leading-relaxed">
+                Ready to transform your energy infrastructure? Get in touch with our team of experts today.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="animate-on-scroll bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-[#0D0D0D] dark:text-white mb-6">Send Us a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name"
+                                    class="block text-sm font-medium text-[#0D0D0D] dark:text-white mb-2">Full
+                                    Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#2C2C2C] border border-gray-200 dark:border-[#404040] focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:border-transparent transition-all duration-150"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block text-sm font-medium text-[#0D0D0D] dark:text-white mb-2">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#2C2C2C] border border-gray-200 dark:border-[#404040] focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:border-transparent transition-all duration-150"
+                                    placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone"
+                                class="block text-sm font-medium text-[#0D0D0D] dark:text-white mb-2">Phone
+                                Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#2C2C2C] border border-gray-200 dark:border-[#404040] focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:border-transparent transition-all duration-150"
+                                placeholder="+234...">
+                        </div>
+                        <div>
+                            <label for="message"
+                                class="block text-sm font-medium text-[#0D0D0D] dark:text-white mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#2C2C2C] border border-gray-200 dark:border-[#404040] focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:border-transparent transition-all duration-150"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-8 py-4 bg-[#EC3237] hover:bg-[#D12B2F] text-white font-semibold rounded-xl transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Image -->
+                <div class="animate-on-scroll delay-200 space-y-8">
+                    <img src="https://raw.createusercontent.com/538c894e-708c-4740-9b0d-b94f0e633c37/"
+                        alt="Customer support team" class="w-full h-64 object-cover rounded-3xl shadow-lg">
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-[#EC3237] to-[#F3AD31] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#0D0D0D] dark:text-white mb-1">Email Us</h3>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">info@upnepa.com</p>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">support@upnepa.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-[#50C878] to-[#F3AD31] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#0D0D0D] dark:text-white mb-1">Call Us</h3>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">+234 800 UPNEPA</p>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">+234 123 456 7890</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-[#EC3237] to-[#50C878] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#0D0D0D] dark:text-white mb-1">Visit Us</h3>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">123 Innovation Drive, Tech Hub</p>
+                                <p class="text-[#555555] dark:text-[#C0C0C0]">Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F6F5F2] dark:bg-[#1E1E1E] rounded-2xl p-6">
+                        <h3 class="text-lg font-bold text-[#0D0D0D] dark:text-white mb-4">Business Hours</h3>
+                        <div class="space-y-2 text-[#555555] dark:text-[#C0C0C0]">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span>9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication Channels Section -->
+    <section class="py-16 md:py-24 px-6 bg-[#F6F5F2] dark:bg-[#0F0F0F]">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <div class="animate-on-scroll mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-[#0D0D0D] dark:text-white mb-6">
+                    Choose Your Preferred Way to Connect
+                </h2>
+                <p class="text-lg text-[#555555] dark:text-[#C0C0C0] max-w-3xl mx-auto">
+                    We offer multiple channels to ensure you can reach us quickly and conveniently.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="#"
+                    class="animate-on-scroll group bg-white dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div
+                        class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="message-square" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-2">Send a Message</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0]">Get a response within 24 hours</p>
+                </a>
+
+                <a href="#"
+                    class="animate-on-scroll delay-100 group bg-white dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div
+                        class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="calendar" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-2">Request Consultation</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0]">Schedule a meeting with an expert</p>
+                </a>
+
+                <a href="#"
+                    class="animate-on-scroll delay-200 group bg-white dark:bg-[#1E1E1E] rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div
+                        class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0D0D0D] dark:text-white mb-2">WhatsApp</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0]">Chat with us instantly</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="animate-on-scroll text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-[#0D0D0D] dark:text-white mb-6">
+                    Find Us
+                </h2>
+            </div>
+            <div class="animate-on-scroll rounded-3xl overflow-hidden shadow-xl h-[400px] md:h-[500px] relative">
+                <img src="https://raw.createusercontent.com/0f793427-5f75-46f6-9726-258b39d1712b/"
+                    alt="Map location of UPNEPA office" class="w-full h-full object-cover">
+                <div
+                    class="absolute bottom-8 left-8 bg-white dark:bg-[#1E1E1E] p-6 rounded-2xl shadow-lg max-w-xs hidden md:block">
+                    <h3 class="text-lg font-bold text-[#0D0D0D] dark:text-white mb-2">Headquarters</h3>
+                    <p class="text-[#555555] dark:text-[#C0C0C0] text-sm">123 Innovation Drive, Tech Hub, Lagos,
+                        Nigeria</p>
+                    <a href="#"
+                        class="text-[#EC3237] dark:text-[#F3AD31] text-sm font-semibold mt-3 inline-block hover:underline">Get
+                        Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-[#F7F7F7] dark:bg-[#1A1A1A] border-t border-[#EDEDED] dark:border-[#404040] py-16 px-6 font-inter">
+        <div class="max-w-[1280px] mx-auto">
+            <!-- Logo and Brand - Centered -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center space-x-3 mb-12">
+                    <img src="Logo.jpg" alt="URS Logo" class="w-8 h-8 rounded-lg object-contain">
+                    <span class="text-[#111111] dark:text-white text-[18px] font-semibold font-inter">
+                        UPNEPA Renewable Services Ltd
+                    </span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav>
+                    <div class="flex flex-wrap items-center justify-center gap-10">
+                        <a href="index.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Home</a>
+                        <a href="about.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">About
+                            Us</a>
+                        <a href="services.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Services</a>
+                        <a href="market.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Market
+                            & Future</a>
+                        <a href="team.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Our
+                            Team</a>
+                        <a href="contact.html"
+                            class="text-[#111111] dark:text-white opacity-80 hover:opacity-100 hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[16px] font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#EC3237] focus:ring-offset-2 focus:ring-inset rounded-sm px-2 py-1">Contact</a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Company Info Section -->
+            <div class="text-center mb-12">
+                <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] font-normal max-w-2xl mx-auto leading-relaxed">
+                    Building the future of clean power & intelligent infrastructure across Africa. UPNEPA Renewable
+                    Services Ltd delivers next-generation renewable energy, AI-powered smart grids, and cloud
+                    infrastructure solutions.
+                </p>
+            </div>
+
+            <!-- Bottom row - Copyright and Legal Links -->
+            <div
+                class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 pt-8 border-t border-[#EDEDED] dark:border-[#404040]">
+                <!-- Copyright -->
+                <div class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] font-normal order-2 md:order-1">
+                    © 2024 UPNEPA Renewable Services Ltd. All rights reserved.
+                </div>
+
+                <!-- Legal Links -->
+                <div class="flex items-center order-1 md:order-2">
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Privacy
+                            Policy</a>
+                        <span class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] mx-6">|</span>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Terms
+                            of Service</a>
+                        <span class="text-[#6B6B6B] dark:text-[#B0B0B0] text-[14px] mx-6">|</span>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="#"
+                            class="text-[#6B6B6B] dark:text-[#B0B0B0] hover:text-[#EC3237] dark:hover:text-[#F3AD31] text-[14px] font-medium transition-colors duration-150">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
